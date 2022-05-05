@@ -1,0 +1,14 @@
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.BL.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.BL.pdb
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.BE.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.DA.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\EntityFramework.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.BE.pdb
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.DA.pdb
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\BanBif.BanBiFlex.DA.dll.config
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\bin\Release\EntityFramework.xml
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\obj\Release\BanBif.BanBiFlex.BL.csproj.AssemblyReference.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\obj\Release\BanBif.BanBiFlex.BL.csproj.CoreCompileInputs.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\obj\Release\BanBif.BanBiFlex.BL.csproj.CopyComplete
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\obj\Release\BanBif.BanBiFlex.BL.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BL\obj\Release\BanBif.BanBiFlex.BL.pdb

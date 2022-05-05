@@ -1,0 +1,6 @@
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Release\BanBif.BanBiFlex.BE.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Release\BanBif.BanBiFlex.BE.pdb
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Release\BanBif.BanBiFlex.BE.csproj.AssemblyReference.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Release\BanBif.BanBiFlex.BE.csproj.CoreCompileInputs.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Release\BanBif.BanBiFlex.BE.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Release\BanBif.BanBiFlex.BE.pdb

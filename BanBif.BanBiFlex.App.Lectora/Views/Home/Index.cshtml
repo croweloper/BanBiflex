@@ -1,0 +1,240 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/Library/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Library/js/jquery-2.1.4.min.js"></script>
+    <title>BanBiflex | Separación de Sitios</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Library/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Library/css/login.css" rel="stylesheet" />
+    @*<script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+        <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />*@
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+
+        function Cargando() {
+            $('#process-data-loader').show();
+        }
+    </script>
+</head>
+<body style="background-color:#00A5FF">
+    <div class="container">
+        <div class="row">
+            <div style="display:none" class="col-lg-1 mt-3 pb-2 mb-4  border-bottom">
+                <img class="m-t-sm" height="20" src="~/Library/img/logo.png" />
+            </div>
+            <div class="col-lg-11 mt-2 pb-2 mb-4  border-bottom">
+                <span style="color: white;font-size: 23px;">MiEspacioFlex</span>
+            </div>
+            <div class="col-lg-11 mt-2 pb-2 mb-4  border-bottom">
+                <span style="color: white;font-size: 23px;">
+                    Plataforma de Separación de Espacios
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row" m-auto>
+            <div class="col-lg-12 text-center text-white">
+                <img src="~/Library/img/hola.png" height="50" />
+            </div>
+
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 text-white text-center mb-3">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <input id="hidMensaje" type="hidden" value="@ViewBag.Mensaje" />
+            </div>
+            <div class="col-lg-4">
+                <div class="card animated fadeIn" style="border-radius:10px !important">
+
+                    <div class="bg-white card-body" style="border-radius:10px !important">
+                        <div class="row">
+                            @*<div class="col-lg-12 mb-3 text-primary text-center">
+                                <h2><b>LOGIN</b></h2>
+                            </div>*@
+                            <div class="col-lg-12 text-center">
+                                <input type="text" id="txt_dni" name="txt_dni" class="form-control form-control-lg text-center mb-2" placeholder="Nro Documento" onkeyup="buscar()" required autocomplete="off" />
+                                <div id="process-data-loader" class="notdisplay">
+                                    <img src="~/Library/img/ajax-loader.gif" alt="" />
+                                    <label>Validando credenciales...</label>
+                                </div>
+
+                                <div id="div-continuar" style="display:none">
+
+                                    <button type='button' id="btnLogin" name='btn_login' class='btn btn-primary mt-2 text-white' onclick="Cargando()">Ingresar</button>
+
+                                </div>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+       
+           
+            <div class="row">
+                <div class="col-lg-12 text-center pt-1 mt-5 border-top text-white">
+                    <img src="~/Library/img/logo.png" height="15" />
+                </div>
+            </div>
+
+        </div>
+        <script src="~/Library/js/bootstrap.min.js"></script>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+        @*<link href="http://tristanedwards.me/u/SweetAlert/lib/sweet-alert.css" rel="stylesheet" />*@
+
+<script>
+            sessionStorage.setItem("APP", "@ViewBag.App");
+            sessionStorage.setItem("HostName", "@ViewBag.HostName");
+            const $codigo = document.querySelector("#txt_dni");
+            $codigo.focus()
+        //document.addEventListener("DOMContentLoaded", () => {
+        //
+        //    $codigo.addEventListener("keydown", evento => {
+        //        if (evento.keyCode === 13) {
+        //            // El lector ya terminó de leer
+
+        //        }
+        //    });
+        //    $codigo.focus();
+        //});
+
+            function buscar() {
+                var ruc = $('#txt_dni').val();
+                if (ruc.length == 8 || ruc.length == 9) {
+                    Cargando();
+                   const codigoDeBarras = $codigo.value;
+                    console.log($codigo.value);
+                    var oBELoginRequest = {};
+                    oBELoginRequest.Documento = codigoDeBarras;
+                    oBELoginRequest.HostName = sessionStorage.HostName;
+                    $.ajax({
+                        url: sessionStorage.APP + '/Home/ListarReservasDocumento',
+                        type: "POST",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        processData: true,
+                        data: JSON.stringify(oBELoginRequest),
+                        success: function (responseLogin) {
+                            console.log(responseLogin.data);
+                            $('#process-data-loader').hide();
+                            if (responseLogin.data.length == 0) {
+                                swal("DNI no tiene reserva confirmada", "Valide reserva con el administrador del sistema", "error");
+                                setTimeout(function () {
+                                        window.location.href = sessionStorage.APP;
+                                    }, 10000);
+                            }
+                            else {
+
+                                var nombre = responseLogin.data[0].Nombre;
+
+
+                                if(nombre == "NO EXISTE")
+                                {
+                                    swal("DNI no existe en nuestra Base de Datos", "Valide el DNI", "error");
+                                    setTimeout(function () {
+                                        window.location.href = sessionStorage.APP;
+                                    }, 10000);
+                                }
+                                else
+                                {
+                                   if (nombre == "GRUPO CERO") {
+                                       if (responseLogin.data[0].Tipo.includes("BANBIF.COM.PE")) {
+                                            swal("¡Hola! " + responseLogin.data[0].Comentario + " Empresa: BANBIF", "Tu formas parte del grupo 0, no es necesario que separes tu espacio de trabajo.Tu piso asignado es el " + responseLogin.data[0].Piso + ". Te esperamos", "success");
+                                        }
+                                        else {
+                                            swal("¡Hola! " + responseLogin.data[0].Comentario + " Empresa: " + responseLogin.data[0].Tipo, "Tu formas parte del grupo 0, no es necesario que separes tu espacio de trabajo.Tu piso asignado es el " + responseLogin.data[0].Piso + ". Te esperamos", "success");
+                                        }
+                                        setTimeout(function () {
+                                            window.location.href = sessionStorage.APP;
+                                        }, 10000);
+                                   }
+                                    if (nombre == "LISTA NEGRA") {
+                                        swal("¡Hola!  Bloqueado por el área de Salud Ocupacional ", responseLogin.data[0].Comentario, "error");
+                                        setTimeout(function () {
+                                            window.location.href = sessionStorage.APP;
+                                        }, 10000);
+                                    }
+                                    else {
+                                        var span = document.createElement("span");
+                                    span.innerHTML = "<b>Reserva Confirmada para: " + responseLogin.data[0].Nombre + "</b><br>";
+                                    $.each(responseLogin.data, function (index, item) {
+                                        var textComentario = item.Comentario;
+                                        if (item.Comentario == "Auto") {
+                                            textComentario += " Placa: " + item.Placa;
+                                        }
+                                        span.innerHTML += "<br>Reserva Confirmada: " + item.Tipo + '<br>Asiento: ' + item.Sitio + '<br>Piso: ' + item.Piso + '<br>Horario: ' + item.HoraInicial + '-' + item.HoraFinal + '<br>Comentarios: ' + textComentario + '';
+                                    });
+                                    //swal(span);
+                                    swal(span, {
+                                        icon: "success",
+                                    });
+                                   setTimeout(function () {
+                                        window.location.href = sessionStorage.APP;
+                                    }, 10000);
+                                    }
+
+
+                                }
+
+                            }
+
+                            //if (responseLogin.data.Id > 0) {
+
+
+                            //    var html = '<h4>' + responseLogin.data[0].Nombre+ '</h4>';
+
+                            //    swal(html);
+                            //    //sessionStorage.setItem("NOMBRES", responseLogin.data.Nombre);
+                            //    //sessionStorage.setItem("CORREO", responseLogin.data.Correo);
+                            //    //sessionStorage.setItem("USERID", responseLogin.data.Id);
+                            //    //sessionStorage.setItem("PISO", responseLogin.data.Piso);
+                            //    //sessionStorage.setItem("SITIO", responseLogin.data.NroSitio);
+                            //    //window.location.href = sessionStorage.APP + "/Principal";
+                            //} else {
+                            //    alert("Valide el Documento ingresado.");
+                            //    window.location.href = sessionStorage.APP;
+                            //}
+
+                        },
+                        failure: function (msg) {
+                            console.log(msg);
+                            //  $.unblockUI();
+                        },
+                        error: function (xhr, status, error) {
+                            console.log(error);
+                            //  $.unblockUI();
+                        },
+                        complete: function () {
+                            //$.unblockUI();
+                            //$("#prueba").dialog("close")
+                        }
+                    });
+                    // Limpiar el campo
+                    $codigo.value = "";
+                }
+            }
+</script>
+</body>
+</html>

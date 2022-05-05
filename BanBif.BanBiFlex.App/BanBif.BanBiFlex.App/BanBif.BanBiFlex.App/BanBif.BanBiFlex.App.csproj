@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F0E41C16-B4F4-4CB4-A907-7ACF667668FD}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BanBif.BanBiFlex.App</RootNamespace>
+    <AssemblyName>BanBif.BanBiFlex.App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44335</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MisReservasController.cs" />
+    <Compile Include="Controllers\PrincipalController.cs" />
+    <Compile Include="Controllers\SweetController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ImagenesPiso\-1.jpg" />
+    <Content Include="Content\ImagenesPiso\1.jpg" />
+    <Content Include="Content\ImagenesPiso\10.jpg" />
+    <Content Include="Content\ImagenesPiso\11.jpg" />
+    <Content Include="Content\ImagenesPiso\11__.jpg" />
+    <Content Include="Content\ImagenesPiso\12.jpg" />
+    <Content Include="Content\ImagenesPiso\13.jpg" />
+    <Content Include="Content\ImagenesPiso\14.jpg" />
+    <Content Include="Content\ImagenesPiso\15.jpg" />
+    <Content Include="Content\ImagenesPiso\2.jpg" />
+    <Content Include="Content\ImagenesPiso\3.jpg" />
+    <Content Include="Content\ImagenesPiso\4.jpg" />
+    <Content Include="Content\ImagenesPiso\5.jpg" />
+    <Content Include="Content\ImagenesPiso\6.jpg" />
+    <Content Include="Content\ImagenesPiso\7.jpg" />
+    <Content Include="Content\ImagenesPiso\8.jpg" />
+    <Content Include="Content\ImagenesPiso\9.jpg" />
+    <Content Include="Content\ImagenesPiso\icon.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Library\assets\css\ace-ie.min.css" />
+    <Content Include="Library\assets\css\ace-part2.min.css" />
+    <Content Include="Library\assets\css\ace-rtl.min.css" />
+    <Content Include="Library\assets\css\ace-skins.min.css" />
+    <Content Include="Library\assets\css\ace.min.css" />
+    <Content Include="Library\assets\css\bootstrap-colorpicker.min.css" />
+    <Content Include="Library\assets\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Library\assets\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Library\assets\css\bootstrap-duallistbox.min.css" />
+    <Content Include="Library\assets\css\bootstrap-editable.min.css" />
+    <Content Include="Library\assets\css\bootstrap-multiselect.min.css" />
+    <Content Include="Library\assets\css\bootstrap-timepicker.min.css" />
+    <Content Include="Library\assets\css\bootstrap.min.css" />
+    <Content Include="Library\assets\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Library\assets\css\checkbox.css" />
+    <Content Include="Library\assets\css\chosen.min.css" />
+    <Content Include="Library\assets\css\colorbox.min.css" />
+    <Content Include="Library\assets\css\daterangepicker.min.css" />
+    <Content Include="Library\assets\css\dropzone.min.css" />
+    <Content Include="Library\assets\css\font-awesome.min.css" />
+    <Content Include="Library\assets\css\fonts.googleapis.com.css" />
+    <Content Include="Library\assets\css\fonts\Poppins_300-400-500-600-700.css" />
+    <Content Include="Library\assets\css\fonts\Roboto_300-400-500-700.css" />
+    <Content Include="Library\assets\css\fullcalendar.min.css" />
+    <Content Include="Library\assets\css\images\meteorshower2.jpg" />
+    <Content Include="Library\assets\css\images\pattern.jpg" />
+    <Content Include="Library\assets\css\img\ajax-loader.gif" />
+    <Content Include="Library\assets\css\img\ajax-loading.gif" />
+    <Content Include="Library\assets\css\jquery-ui.custom.min.css" />
+    <Content Include="Library\assets\css\jquery-ui.min.css" />
+    <Content Include="Library\assets\css\jquery.gritter.min.css" />
+    <Content Include="Library\assets\css\login.css" />
+    <Content Include="Library\assets\css\prettify.min.css" />
+    <Content Include="Library\assets\css\select2.min.css" />
+    <Content Include="Library\assets\css\style.css" />
+    <Content Include="Library\assets\css\ui.jqgrid.min.css" />
+    <Content Include="Library\assets\font-awesome\4.5.0\css\font-awesome.min.css" />
+    <Content Include="Library\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Library\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Library\assets\fonts\Roboto\LICENSE.txt" />
+    <Content Include="Library\assets\images\avatars\avatar.png" />
+    <Content Include="Library\assets\images\avatars\avatar1.png" />
+    <Content Include="Library\assets\images\avatars\avatar2.png" />
+    <Content Include="Library\assets\images\avatars\avatar3.png" />
+    <Content Include="Library\assets\images\avatars\avatar4.png" />
+    <Content Include="Library\assets\images\avatars\avatar5.png" />
+    <Content Include="Library\assets\images\avatars\profile-pic.jpg" />
+    <Content Include="Library\assets\images\avatars\user.jpg" />
+    <Content Include="Library\assets\images\banbif\1logo.svg" />
+    <Content Include="Library\assets\images\banbif\circle-01-512.png" />
+    <Content Include="Library\assets\images\banbif\favicon.png" />
+    <Content Include="Library\assets\images\banbif\hola.png" />
+    <Content Include="Library\assets\images\banbif\image-not-available-small.png" />
+    <Content Include="Library\assets\images\banbif\image-not-available.png" />
+    <Content Include="Library\assets\images\banbif\logo-mini.svg" />
+    <Content Include="Library\assets\images\banbif\logo.jpg" />
+    <Content Include="Library\assets\images\banbif\logo.png" />
+    <Content Include="Library\assets\images\banbif\logo_banbif_blanco.png" />
+    <Content Include="Library\assets\images\banbif\old.png" />
+    <Content Include="Library\assets\images\banbif\samples\weather.svg" />
+    <Content Include="Library\assets\images\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="Library\assets\images\bootstrap-colorpicker\alpha.png" />
+    <Content Include="Library\assets\images\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="Library\assets\images\bootstrap-colorpicker\hue.png" />
+    <Content Include="Library\assets\images\bootstrap-colorpicker\saturation.png" />
+    <Content Include="Library\assets\images\email\email1.png" />
+    <Content Include="Library\assets\images\email\email2.png" />
+    <Content Include="Library\assets\images\email\email3.png" />
+    <Content Include="Library\assets\images\email\email4.png" />
+    <Content Include="Library\assets\images\gallery\image-1.jpg" />
+    <Content Include="Library\assets\images\gallery\image-2.jpg" />
+    <Content Include="Library\assets\images\gallery\image-3.jpg" />
+    <Content Include="Library\assets\images\gallery\image-4.jpg" />
+    <Content Include="Library\assets\images\gallery\image-5.jpg" />
+    <Content Include="Library\assets\images\gallery\image-6.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="Library\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="Library\assets\images\placeholder\165x90.png" />
+    <Content Include="Library\assets\images\placeholder\255x150.png" />
+    <Content Include="Library\assets\images\placeholder\530x270.png" />
+    <Content Include="Library\assets\images\placeholder\550x280.png" />
+    <Content Include="Library\assets\js\ace-editable.min.js" />
+    <Content Include="Library\assets\js\ace-elements.min.js" />
+    <Content Include="Library\assets\js\ace-extra.min.js" />
+    <Content Include="Library\assets\js\ace.min.js" />
+    <Content Include="Library\assets\js\autosize.min.js" />
+    <Content Include="Library\assets\js\bootbox.js" />
+    <Content Include="Library\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="Library\assets\js\bootstrap-datepicker.min.js" />
+    <Content Include="Library\assets\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Library\assets\js\bootstrap-editable.min.js" />
+    <Content Include="Library\assets\js\bootstrap-markdown.min.js" />
+    <Content Include="Library\assets\js\bootstrap-multiselect.min.js" />
+    <Content Include="Library\assets\js\bootstrap-tag.min.js" />
+    <Content Include="Library\assets\js\bootstrap-timepicker.min.js" />
+    <Content Include="Library\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="Library\assets\js\bootstrap.min.js" />
+    <Content Include="Library\assets\js\buttons.colVis.min.js" />
+    <Content Include="Library\assets\js\buttons.flash.min.js" />
+    <Content Include="Library\assets\js\buttons.html5.min.js" />
+    <Content Include="Library\assets\js\buttons.print.min.js" />
+    <Content Include="Library\assets\js\Chart.min.js" />
+    <Content Include="Library\assets\js\chosen.jquery.min.js" />
+    <Content Include="Library\assets\js\dataTables.buttons.min.js" />
+    <Content Include="Library\assets\js\dataTables.select.min.js" />
+    <Content Include="Library\assets\js\daterangepicker.min.js" />
+    <Content Include="Library\assets\js\dropzone.min.js" />
+    <Content Include="Library\assets\js\excanvas.min.js" />
+    <Content Include="Library\assets\js\fullcalendar.min.js" />
+    <Content Include="Library\assets\js\grid.locale-en.js" />
+    <Content Include="Library\assets\js\holder.min.js" />
+    <Content Include="Library\assets\js\html5shiv.min.js" />
+    <Content Include="Library\assets\js\jquery-1.11.3.min.js" />
+    <Content Include="Library\assets\js\jquery-2.1.4.min.js" />
+    <Content Include="Library\assets\js\jquery-additional-methods.min.js" />
+    <Content Include="Library\assets\js\jquery-typeahead.js" />
+    <Content Include="Library\assets\js\jquery-ui.custom.min.js" />
+    <Content Include="Library\assets\js\jquery-ui.min.js" />
+    <Content Include="Library\assets\js\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Library\assets\js\jquery.colorbox.min.js" />
+    <Content Include="Library\assets\js\jquery.dataTables.bootstrap.min.js" />
+    <Content Include="Library\assets\js\jquery.dataTables.min.js" />
+    <Content Include="Library\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="Library\assets\js\jquery.flot.min.js" />
+    <Content Include="Library\assets\js\jquery.flot.pie.min.js" />
+    <Content Include="Library\assets\js\jquery.flot.resize.min.js" />
+    <Content Include="Library\assets\js\jquery.gritter.min.js" />
+    <Content Include="Library\assets\js\jquery.hotkeys.index.min.js" />
+    <Content Include="Library\assets\js\jquery.inputlimiter.min.js" />
+    <Content Include="Library\assets\js\jquery.jqGrid.min.js" />
+    <Content Include="Library\assets\js\jquery.knob.min.js" />
+    <Content Include="Library\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="Library\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="Library\assets\js\jquery.nestable.min.js" />
+    <Content Include="Library\assets\js\jquery.raty.min.js" />
+    <Content Include="Library\assets\js\jquery.sparkline.index.min.js" />
+    <Content Include="Library\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Library\assets\js\jquery.validate.min.js" />
+    <Content Include="Library\assets\js\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Library\assets\js\jquery\jquery-3.3.1.slim.min.js" />
+    <Content Include="Library\assets\js\labels\chartjs-plugin-labels.js" />
+    <Content Include="Library\assets\js\markdown.min.js" />
+    <Content Include="Library\assets\js\moment.min.js" />
+    <Content Include="Library\assets\js\popper.min.js" />
+    <Content Include="Library\assets\js\prettify.min.js" />
+    <Content Include="Library\assets\js\respond.min.js" />
+    <Content Include="Library\assets\js\select2.min.js" />
+    <Content Include="Library\assets\js\spin.js" />
+    <Content Include="Library\assets\js\spinbox.min.js" />
+    <Content Include="Library\assets\js\tree.min.js" />
+    <Content Include="Library\assets\js\wizard.min.js" />
+    <Content Include="Library\assets\swf\flashExport.swf" />
+    <Content Include="Library\css\ace-rtl.min.css" />
+    <Content Include="Library\css\ace-skins.min.css" />
+    <Content Include="Library\css\ace.min.css" />
+    <Content Include="Library\css\alertifyjs\alertify.css" />
+    <Content Include="Library\css\alertifyjs\alertify.min.css" />
+    <Content Include="Library\css\alertifyjs\alertify.rtl.css" />
+    <Content Include="Library\css\alertifyjs\alertify.rtl.min.css" />
+    <Content Include="Library\css\alertifyjs\default.css" />
+    <Content Include="Library\css\bootstrap-datepicker\bootstrap-datepicker.css" />
+    <Content Include="Library\css\bootstrap-datepicker\bootstrap-datepicker.min.css" />
+    <Content Include="Library\css\bootstrap.min.css" />
+    <Content Include="Library\css\font-awesome.min.css" />
+    <Content Include="Library\css\fonts.googleapis.com.css" />
+    <Content Include="Library\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Library\css\login.css" />
+    <Content Include="Library\css\site.css" />
+    <Content Include="Library\css\sweetalert2.min.css" />
+    <Content Include="Library\css\zoomy.css" />
+    <Content Include="Library\form\Cliente.js" />
+    <Content Include="Library\imgTarjetas\CeroMembresia.png" />
+    <Content Include="Library\imgTarjetas\clasica.png" />
+    <Content Include="Library\imgTarjetas\Gold.png" />
+    <Content Include="Library\imgTarjetas\Infinite.png" />
+    <Content Include="Library\imgTarjetas\MCplatinum.png" />
+    <Content Include="Library\imgTarjetas\Platinum.png" />
+    <Content Include="Library\imgTarjetas\Signature.png" />
+    <Content Include="Library\img\ajax-loader.gif" />
+    <Content Include="Library\img\avatar2.png" />
+    <Content Include="Library\img\avatars\avatar.png" />
+    <Content Include="Library\img\avatars\avatar1.png" />
+    <Content Include="Library\img\avatars\avatar2.png" />
+    <Content Include="Library\img\avatars\avatar3.png" />
+    <Content Include="Library\img\avatars\avatar4.png" />
+    <Content Include="Library\img\avatars\avatar5.png" />
+    <Content Include="Library\img\avatars\profile-pic.jpg" />
+    <Content Include="Library\img\avatars\user.jpg" />
+    <Content Include="Library\img\conductor-blanco.svg" />
+    <Content Include="Library\img\conductor-color.svg" />
+    <Content Include="Library\img\conductor.svg" />
+    <Content Include="Library\img\details_close.png" />
+    <Content Include="Library\img\details_open.png" />
+    <Content Include="Library\img\hola.png" />
+    <Content Include="Library\img\icon.png" />
+    <Content Include="Library\img\IntruccionesBranch.png" />
+    <Content Include="Library\img\logo.jpg" />
+    <Content Include="Library\img\logo.png" />
+    <Content Include="Library\img\logo_banbif_blanco.png" />
+    <Content Include="Library\img\pasajero-color.svg" />
+    <Content Include="Library\img\volante-blanco.svg" />
+    <Content Include="Library\js\ace-extra.min.js" />
+    <Content Include="Library\js\alertifyjs\alertify.js" />
+    <Content Include="Library\js\alertifyjs\alertify.min.js" />
+    <Content Include="Library\js\AppImagen.js" />
+    <Content Include="Library\js\bootstrap-datepicker\bootstrap-datepicker.js" />
+    <Content Include="Library\js\bootstrap-datepicker\bootstrap-datepicker.min.js" />
+    <Content Include="Library\js\bootstrap.min.js" />
+    <Content Include="Library\js\bootstrapValidator.js" />
+    <Content Include="Library\js\dataTables\dataTables.bootstrap.css" />
+    <Content Include="Library\js\dataTables\dataTables.bootstrap.js" />
+    <Content Include="Library\js\dataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Library\js\dataTables\jquery.dataTables.js" />
+    <Content Include="Library\js\dataTables\jquery.dataTables.min.css" />
+    <Content Include="Library\js\dataTables\jquery.dataTables.min.js" />
+    <Content Include="Library\js\dataTables\jquery.dataTables.select.css" />
+    <Content Include="Library\js\Images\details_close.png" />
+    <Content Include="Library\js\Images\details_open.png" />
+    <Content Include="Library\js\Images\sort_both.png" />
+    <Content Include="Library\js\Validaciones.js" />
+    <Content Include="Library\js\jquery-2.1.4.min.js" />
+    <Content Include="Library\js\jquery-3.3.1.min.js" />
+    <Content Include="Library\js\jquery.blockUI.js" />
+    <Content Include="Library\js\jquery.mobile.custom.min.js" />
+    <Content Include="Library\js\jquery.zoom.js" />
+    <Content Include="Library\js\jquery.zoom.min.js" />
+    <Content Include="Library\js\sweetalert2.min.js" />
+    <Content Include="Library\js\zoomy.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Library\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Library\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Library\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Library\assets\font-awesome\4.5.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Library\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Library\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Library\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Library\assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Library\assets\fonts\Poppins\pxiByp8kv8JHgFVrLCz7Z1xlFQ.woff2" />
+    <Content Include="Library\assets\fonts\Poppins\pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2" />
+    <Content Include="Library\assets\fonts\Poppins\pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2" />
+    <Content Include="Library\assets\fonts\Poppins\pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" />
+    <Content Include="Library\assets\fonts\Poppins\pxiEyp8kv8JHgFVrJJfecg.woff2" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Black.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Bold.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Italic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Light.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-LightItalic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Medium.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Regular.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-Thin.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\Roboto-ThinItalic.ttf" />
+    <Content Include="Library\assets\fonts\Roboto\woff\KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2" />
+    <Content Include="Library\css\bootstrap-datepicker\bootstrap-datepicker.css.map" />
+    <Content Include="Library\css\bootstrap-datepicker\bootstrap-datepicker.min.css.map" />
+    <Content Include="Library\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Library\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Library\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Library\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sweetalert2.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Principal\Index.cshtml" />
+    <Content Include="Views\Sweet\Alert.cshtml" />
+    <Content Include="Views\MisReservas\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BanBif.BanBiFlex.BE\BanBif.BanBiFlex.BE.csproj">
+      <Project>{b2122868-2116-4fe2-b477-3170ffed73db}</Project>
+      <Name>BanBif.BanBiFlex.BE</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64010</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44335/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

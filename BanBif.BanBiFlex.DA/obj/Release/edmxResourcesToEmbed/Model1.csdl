@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="panelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="panelEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR" ReturnType="Collection(panelModel.SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR_Result1)" />
+    <EntitySet Name="BANBIFLEX_RESERVA" EntityType="panelModel.BANBIFLEX_RESERVA" />
+    <FunctionImport Name="SP_BANBIFLEX_ACTUALIZA_ESTACIONAMIENTO_RESERVA">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="FECHA" Mode="In" Type="String" />
+      <Parameter Name="TIPO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_LISTAR_RESERVAS" ReturnType="Collection(panelModel.SP_BANBIFLEX_LISTAR_RESERVAS_Result)">
+      <Parameter Name="ID_USUARIO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_ACTUALIZAR_ESTADO_RESERVA">
+      <Parameter Name="ID_RESERVA" Mode="In" Type="Int32" />
+      <Parameter Name="ESTADO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES" ReturnType="Collection(panelModel.SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES_Result)">
+      <Parameter Name="FECHA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_LOGIN" ReturnType="Collection(panelModel.SP_BANBIFLEX_LOGIN_Result2)">
+      <Parameter Name="DNI" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_AFORO_PISO" ReturnType="Collection(String)">
+      <Parameter Name="PISO" Mode="In" Type="Int32" />
+      <Parameter Name="FECHA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_AFORO_SALA" ReturnType="Collection(Int32)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_CORREO_PARTICIPANTE" ReturnType="Collection(Int32)">
+      <Parameter Name="CORREO" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_HORA_SALA" ReturnType="Collection(Int32)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="HORA" Mode="In" Type="String" />
+      <Parameter Name="FECHA" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO" ReturnType="Collection(panelModel.SP_BANBIFLEX_VALIDAR_SITIO_USUARIO_Result2)">
+      <Parameter Name="PISO" Mode="In" Type="Int32" />
+      <Parameter Name="NRO" Mode="In" Type="Int32" />
+      <Parameter Name="FECHA" Mode="In" Type="String" />
+      <Parameter Name="IDUSER" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO" ReturnType="Collection(panelModel.SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO_Result)">
+      <Parameter Name="DOCUMENTO" Mode="In" Type="String" />
+      <Parameter Name="HOSTNAME" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_BANBIFLEX_LOGIN_Result">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="Int32" Name="NROSITIO" Nullable="true" />
+    <Property Type="Int32" Name="ESTADO" Nullable="true" />
+    <Property Type="Int32" Name="DECLARACIONJURADA" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_LOGIN_Result1">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="Int32" Name="NROSITIO" Nullable="true" />
+    <Property Type="Int32" Name="ESTADO" Nullable="true" />
+    <Property Type="Int32" Name="DECLARACIONJURADA" Nullable="true" />
+    <Property Type="Int32" Name="LISTANEGRA" Nullable="true" />
+    <Property Type="Int32" Name="GRUPOCERO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR_Result">
+    <Property Type="String" Name="FECHINICIAL" Nullable="true" MaxLength="8000" />
+    <Property Type="String" Name="FECHAFINAL" Nullable="true" MaxLength="8000" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO_Result">
+    <Property Type="String" Name="Mensaje" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="NRO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR_Result1">
+    <Property Type="String" Name="FECHINICIAL" Nullable="true" MaxLength="8000" />
+    <Property Type="String" Name="FECHAFINAL" Nullable="true" MaxLength="8000" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO_Result1">
+    <Property Type="String" Name="Mensaje" Nullable="false" MaxLength="25" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="NRO" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="BANBIFLEX_RESERVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_USUARIO" Type="Int32" />
+    <Property Name="FECHA" Type="DateTime" Precision="0" />
+    <Property Name="ID_ESPACIOTRABAJO" Type="Int32" />
+    <Property Name="ID_ESTACIONAMIENTO" Type="Int32" />
+    <Property Name="NROPLACA" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="COMENTARIO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="FECHAINGRESO_1" Type="DateTime" Precision="3" />
+    <Property Name="FECHAINGRESO_2" Type="DateTime" Precision="3" />
+    <Property Name="FECHAINGRESO_3" Type="DateTime" Precision="3" />
+    <Property Name="FECHAINGRESO_4" Type="DateTime" Precision="3" />
+    <Property Name="FECHAINGRESO_5" Type="DateTime" Precision="3" />
+    <Property Name="ESTADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HoraInicial" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="HoraFinal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FECHARESERVA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IP_PUERTA_INGRESO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="SP_BANBIFLEX_LISTAR_MIS_RESERVAS_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="Int32" Name="SITIO" Nullable="true" />
+    <Property Type="Int32" Name="ESTACIONAMIENTO" Nullable="true" />
+    <Property Type="String" Name="NROPLACA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="COMENTARIO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_LISTAR_RESERVAS_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="FECHA" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="Int32" Name="SITIO" Nullable="true" />
+    <Property Type="Int32" Name="ESTACIONAMIENTO" Nullable="true" />
+    <Property Type="String" Name="NROPLACA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="COMENTARIO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="ESTADO" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="SALA" Nullable="false" MaxLength="58" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_LOGIN_Result2">
+    <Property Type="Int32" Name="ID" Nullable="true" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="300" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="Int32" Name="NROSITIO" Nullable="true" />
+    <Property Type="Int32" Name="ESTADO" Nullable="true" />
+    <Property Type="Int32" Name="DECLARACIONJURADA" Nullable="true" />
+    <Property Type="Int32" Name="LISTANEGRA" Nullable="true" />
+    <Property Type="Int32" Name="GRUPOCERO" Nullable="true" />
+    <Property Type="String" Name="CORREO" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO_Result2">
+    <Property Type="String" Name="Mensaje" Nullable="false" MaxLength="47" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="NRO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="NOMBRE" Nullable="true" MaxLength="300" />
+    <Property Type="DateTime" Name="FECHA" Nullable="true" />
+    <Property Type="String" Name="HoraInicial" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="HoraFinal" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="NRO" Nullable="true" />
+    <Property Type="Int32" Name="PISO" Nullable="true" />
+    <Property Type="String" Name="COMENTARIO" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="NROPLACA" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="TIPO" Nullable="true" MaxLength="30" />
+  </ComplexType>
+</Schema>

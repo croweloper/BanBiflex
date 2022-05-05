@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="panelModelStoreContainer" CdmEntityContainer="panelEntities">
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR_Result1">
+          <ScalarProperty Name="FECHINICIAL" ColumnName="FECHINICIAL" />
+          <ScalarProperty Name="FECHAFINAL" ColumnName="FECHAFINAL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BANBIFLEX_RESERVA">
+      <EntityTypeMapping TypeName="panelModel.BANBIFLEX_RESERVA">
+        <MappingFragment StoreEntitySet="BANBIFLEX_RESERVA">
+          <ScalarProperty Name="IP_PUERTA_INGRESO" ColumnName="IP_PUERTA_INGRESO" />
+          <ScalarProperty Name="FECHARESERVA" ColumnName="FECHARESERVA" />
+          <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+          <ScalarProperty Name="HoraInicial" ColumnName="HoraInicial" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="FECHAINGRESO_5" ColumnName="FECHAINGRESO_5" />
+          <ScalarProperty Name="FECHAINGRESO_4" ColumnName="FECHAINGRESO_4" />
+          <ScalarProperty Name="FECHAINGRESO_3" ColumnName="FECHAINGRESO_3" />
+          <ScalarProperty Name="FECHAINGRESO_2" ColumnName="FECHAINGRESO_2" />
+          <ScalarProperty Name="FECHAINGRESO_1" ColumnName="FECHAINGRESO_1" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="NROPLACA" ColumnName="NROPLACA" />
+          <ScalarProperty Name="ID_ESTACIONAMIENTO" ColumnName="ID_ESTACIONAMIENTO" />
+          <ScalarProperty Name="ID_ESPACIOTRABAJO" ColumnName="ID_ESPACIOTRABAJO" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_ACTUALIZA_ESTACIONAMIENTO_RESERVA" FunctionName="panelModel.Store.SP_BANBIFLEX_ACTUALIZA_ESTACIONAMIENTO_RESERVA" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_LISTAR_RESERVAS" FunctionName="panelModel.Store.SP_BANBIFLEX_LISTAR_RESERVAS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_LISTAR_RESERVAS_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="PISO" ColumnName="PISO" />
+          <ScalarProperty Name="SITIO" ColumnName="SITIO" />
+          <ScalarProperty Name="ESTACIONAMIENTO" ColumnName="ESTACIONAMIENTO" />
+          <ScalarProperty Name="NROPLACA" ColumnName="NROPLACA" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_ACTUALIZAR_ESTADO_RESERVA" FunctionName="panelModel.Store.SP_BANBIFLEX_ACTUALIZAR_ESTADO_RESERVA" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SALA" ColumnName="SALA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_LOGIN" FunctionName="panelModel.Store.SP_BANBIFLEX_LOGIN">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_LOGIN_Result2">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="PISO" ColumnName="PISO" />
+          <ScalarProperty Name="NROSITIO" ColumnName="NROSITIO" />
+          <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+          <ScalarProperty Name="DECLARACIONJURADA" ColumnName="DECLARACIONJURADA" />
+          <ScalarProperty Name="LISTANEGRA" ColumnName="LISTANEGRA" />
+          <ScalarProperty Name="GRUPOCERO" ColumnName="GRUPOCERO" />
+          <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_AFORO_PISO" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_AFORO_PISO" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_AFORO_SALA" FunctionName="panelModel.Store.SP_BANBIFLEX_AFORO_SALA" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_CORREO_PARTICIPANTE" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_CORREO_PARTICIPANTE" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_HORA_SALA" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_HORA_SALA" />
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO" FunctionName="panelModel.Store.SP_BANBIFLEX_VALIDAR_SITIO_USUARIO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_VALIDAR_SITIO_USUARIO_Result2">
+          <ScalarProperty Name="Mensaje" ColumnName="Mensaje" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NRO" ColumnName="NRO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO" FunctionName="panelModel.Store.SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="panelModel.SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+          <ScalarProperty Name="HoraInicial" ColumnName="HoraInicial" />
+          <ScalarProperty Name="HoraFinal" ColumnName="HoraFinal" />
+          <ScalarProperty Name="NRO" ColumnName="NRO" />
+          <ScalarProperty Name="PISO" ColumnName="PISO" />
+          <ScalarProperty Name="COMENTARIO" ColumnName="COMENTARIO" />
+          <ScalarProperty Name="NROPLACA" ColumnName="NROPLACA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

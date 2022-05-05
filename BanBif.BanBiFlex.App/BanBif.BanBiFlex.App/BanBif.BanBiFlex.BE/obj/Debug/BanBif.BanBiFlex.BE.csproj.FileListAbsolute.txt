@@ -1,0 +1,12 @@
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Debug\BanBif.BanBiFlex.BE.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Debug\BanBif.BanBiFlex.BE.pdb
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.csproj.AssemblyReference.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.csproj.CoreCompileInputs.cache
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.dll
+C:\Personal\Goncam\Qrezqa\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.pdb
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Debug\BanBif.BanBiFlex.BE.dll
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\bin\Debug\BanBif.BanBiFlex.BE.pdb
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.csproj.AssemblyReference.cache
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.csproj.CoreCompileInputs.cache
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.dll
+C:\Users\DRomero\Desktop\BanBif.BanBiFlex.App\BanBif.BanBiFlex.App\BanBif.BanBiFlex.BE\obj\Debug\BanBif.BanBiFlex.BE.pdb

@@ -1,0 +1,37 @@
+﻿const imagePreview = document.getElementById('img-preview');
+const imageUploader = document.getElementById('img-uploader');
+const imageUploadbar = document.getElementById('img-upload-bar');
+
+const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/goncam-systems/image/upload'
+const CLOUDINARY_UPLOAD_PRESET = 'ekj1ql2w';
+
+imageUploader.addEventListener('change', async (e) => {
+     console.log(e);
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+
+    // Send to cloudianry
+    const res = await axios.post(
+        CLOUDINARY_URL,
+        formData,
+        {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            onUploadProgress(e) {
+                let progress = Math.round((e.loaded * 100.0) / e.total);
+                console.log(progress);
+                imageUploadbar.setAttribute('value', progress);
+               
+            }
+        }
+    );
+    console.log(res);
+   // document.getElementById('') = res.data.secure_url;
+    $('#txtUrlImagen').val(res.data.secure_url);
+    //var strHTMLImagen = '<img src="' + res.data.secure_url + '"width="150" height="150">';
+    //$("#DivImagen").html(strHTMLImagen);
+  //  imagePreview.src = res.data.secure_url;
+});

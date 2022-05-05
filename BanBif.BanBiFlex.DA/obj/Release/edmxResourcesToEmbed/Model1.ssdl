@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="panelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BANBIFLEX_RESERVA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_USUARIO" Type="int" />
+    <Property Name="FECHA" Type="date" />
+    <Property Name="ID_ESPACIOTRABAJO" Type="int" />
+    <Property Name="ID_ESTACIONAMIENTO" Type="int" />
+    <Property Name="NROPLACA" Type="varchar" MaxLength="10" />
+    <Property Name="COMENTARIO" Type="varchar" MaxLength="300" />
+    <Property Name="FECHAINGRESO_1" Type="datetime" />
+    <Property Name="FECHAINGRESO_2" Type="datetime" />
+    <Property Name="FECHAINGRESO_3" Type="datetime" />
+    <Property Name="FECHAINGRESO_4" Type="datetime" />
+    <Property Name="FECHAINGRESO_5" Type="datetime" />
+    <Property Name="ESTADO" Type="varchar" MaxLength="10" />
+    <Property Name="HoraInicial" Type="varchar" MaxLength="10" />
+    <Property Name="HoraFinal" Type="varchar" MaxLength="10" />
+    <Property Name="FECHARESERVA" Type="datetime" Nullable="false" />
+    <Property Name="IP_PUERTA_INGRESO" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="SP_BANBIFLEX_ACTUALIZA_ESTACIONAMIENTO_RESERVA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+    <Parameter Name="TIPO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_ACTUALIZAR_ESTADO_RESERVA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_RESERVA" Type="int" Mode="In" />
+    <Parameter Name="ESTADO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_AFORO_SALA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_LISTAR_RESERVAS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID_USUARIO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_LISTAR_RESERVAS_DOCUMENTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DOCUMENTO" Type="varchar" Mode="In" />
+    <Parameter Name="HOSTNAME" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_LOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DNI" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_VALIDAR_AFORO_PISO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PISO" Type="int" Mode="In" />
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_VALIDAR_CORREO_PARTICIPANTE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CORREO" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_VALIDAR_FECHA_A_RESERVAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_BANBIFLEX_VALIDAR_HORA_SALA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ID" Type="int" Mode="In" />
+    <Parameter Name="HORA" Type="varchar" Mode="In" />
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_VALIDAR_SALAS_REUNIONES" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_BANBIFLEX_VALIDAR_SITIO_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PISO" Type="int" Mode="In" />
+    <Parameter Name="NRO" Type="int" Mode="In" />
+    <Parameter Name="FECHA" Type="varchar" Mode="In" />
+    <Parameter Name="IDUSER" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="panelModelStoreContainer">
+    <EntitySet Name="BANBIFLEX_RESERVA" EntityType="Self.BANBIFLEX_RESERVA" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

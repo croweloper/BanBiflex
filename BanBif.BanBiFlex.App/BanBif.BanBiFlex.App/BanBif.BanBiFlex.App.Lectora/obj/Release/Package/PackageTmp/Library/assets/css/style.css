@@ -1,0 +1,177 @@
+body {
+    background-color: #fff;
+}
+
+.card {
+    margin-top: 1em;
+}
+
+/* IMG displaying */
+.person-card {
+    margin-top: 1em;
+    padding-top: 0em;
+}
+.person-card .card-title{
+    text-align: center;
+}
+.person-card .person-img{
+    width: 10em;
+    position: absolute;
+    top: -5em;
+    left: 50%;
+    margin-left: -5em;
+    border-radius: 100%;
+    overflow: hidden;
+    background-color: white;
+}
+
+
+
+#process-data-loader.notdisplay {
+    display: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+
+fieldset.scheduler-border {
+    border: 1px groove #ddd !important;
+    padding: 0 1.4em 0em 1.4em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    width:inherit; /* Or auto */
+    padding:0 10px; /* To give a bit of padding on the left and right */
+    border-bottom:none;
+    color: gray;
+    border-color: gray;
+}
+
+
+/* Loader */
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    display: block;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 99;
+    text-align: center;
+  }
+  
+  #loading.notdisplay {
+    display: none;
+  }
+
+  #loading label{
+    position: absolute;
+    top: 55%;
+    left: 48%;
+    z-index: 100;
+  }
+  
+  #loading-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 100;
+  }
+
+/************ Table ************/
+.lista-referidos {
+    margin: auto;
+    margin-top: 70px;
+    width: 100%;
+    max-width: 924px;
+    min-height: 160px;
+    background: url(img/img-lista-referidos.png);
+    background-size: cover;
+    position: relative;
+    background-position: top center;
+}
+.lista-referidos-table {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    /* font-family: Helvetica; */
+    font-size: 13px;
+}
+.lista-referidos-table thead {
+    background: #c5e5f9;
+    color: #20a3ff;
+}
+.lista-referidos-table td , .lista-referidos-table th{
+    height: 32px;
+    font-weight: 600;
+}
+.lista-referidos-table td {
+    color: #989898;
+}
+.lista-referidos-table tr:nth-child(2n) {
+    background: #f8f9f9;
+}
+.txt-lista-referidos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: white;
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: bold;
+}
+.txt-lista-referidos span {
+    font-family: PMedium;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 13px;
+    display: block;
+}
+.estado {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.activo {
+    background: #b4f32a; 
+}
+.proceso {
+    background: #ffe008; 
+}
+.proxima {
+    background: #ee3030; 
+}
+.contactar {
+    background: #ffa210;
+}

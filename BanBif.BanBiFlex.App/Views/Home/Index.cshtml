@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="~/Library/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Library/js/jquery-2.1.4.min.js"></script>
+    <title>BanBiflex | Separación de Sitios</title>
+
+    <!-- Bootstrap -->
+    <link href="~/Library/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Library/css/login.css" rel="stylesheet" />
+    @*<script src="https://lipis.github.io/bootstrap-sweetalert/lib/sweet-alert.js"></script>
+        <link href="~/Content/sweetalert/sweet-alert.css" rel="stylesheet" />*@
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+
+        function Cargando() {
+            $('#process-data-loader').show();
+        }
+    </script>
+</head>
+<body style="background-color:#00A5FF">
+    <div class="container">
+        <div class="row">
+            <div style="display:none" class="col-lg-1 mt-3 pb-2 mb-4  border-bottom">
+                <img class="m-t-sm" height="20" src="~/Library/img/logo.png" />
+            </div>
+            <div class="col-lg-11 mt-2 pb-2 mb-4  border-bottom">
+                <span style="color: white;font-size: 23px;">MiEspacioFlex</span>
+            </div>
+            <div class="col-lg-11 mt-2 pb-2 mb-4  border-bottom">
+                <span style="color: white;font-size: 23px;">
+                    Plataforma de Separación de Espacios
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="row" m-auto>
+            <div class="col-lg-12 text-center text-white">
+                <img src="~/Library/img/hola.png" height="50" />
+            </div>
+
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6 text-white text-center mb-3">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <input id="hidMensaje" type="hidden" value="@ViewBag.Mensaje" />
+            </div>
+            <div class="col-lg-4">
+                <div class="card animated fadeIn" style="border-radius:10px !important">
+
+                    <div class="bg-white card-body" style="border-radius:10px !important">
+                        <div class="row">
+                            @*<div class="col-lg-12 mb-3 text-primary text-center">
+                                    <h2><b>LOGIN</b></h2>
+                                </div>*@
+                            <div class="col-lg-12 text-center">
+                                <input type="text" id="txt_dni" name="txt_dni" class="form-control form-control-lg text-center mb-2" placeholder="Nro Documento" required autocomplete="off" />
+                                <div id="process-data-loader" class="notdisplay">
+                                    <img src="~/Library/img/ajax-loader.gif" alt="" />
+                                    <label>Validando credenciales...</label>
+                                </div>
+
+                                <div id="div-continuar">
+                                    <div class="g-recaptcha" data-sitekey="6LePgKMUAAAAAK96lIyje7v2UFzIC33loqabo38N"></div>
+                                    <button type='button' id="btnLogin" name='btn_login' class='btn btn-primary mt-2 text-white' onclick="Cargando()">Ingresar</button>
+
+                                </div>
+
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center pt-1 mt-5 border-top text-white">
+                <img src="~/Library/img/logo.png" height="15" />
+            </div>
+        </div>
+
+    </div>
+    <script src="~/Library/js/bootstrap.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    @*<link href="http://tristanedwards.me/u/SweetAlert/lib/sweet-alert.css" rel="stylesheet" />*@
+
+    <script>
+    $(document).ready(function () {
+        sessionStorage.setItem("APP", "@ViewBag.App");
+        document.getElementById("txt_dni").focus();
+        //swal({
+        //    title: "Are you sure?",
+        //    text: "You will not be able to recover this imaginary file!",
+        //    type: "warning",
+        //    showCancelButton: true,
+        //    confirmButtonColor: '#DD6B55',
+        //    confirmButtonText: 'Yes, I am sure!',
+        //    cancelButtonText: "No, cancel it!"
+        //}).then(
+        //    function () { alert('1') },
+        //    function () { return false; });
+
+        $(this).keypress(function (event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                $("#btnLogin").click();
+            }
+        });
+
+        $("#btnLogin").on("click", function () {
+
+            var oBELoginRequest = {};
+            oBELoginRequest.nroDocumento = $("#txt_dni").val();
+            var response = grecaptcha.getResponse();
+
+            if (response.length == 0) {
+                swal("Captcha no verificado");
+                $('#process-data-loader').hide();
+                return false;
+            }
+
+            if (oBELoginRequest.nroDocumento == '' ){
+                swal("Ingrese el Documento de Identidad");
+                $('#process-data-loader').hide();
+                return false;
+            }
+            else {
+                $.ajax({
+                    url: sessionStorage.APP + '/Home/IniciarSesion',
+                    type: "POST",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    processData: true,
+                    data: JSON.stringify(oBELoginRequest),
+                    success: function (responseLogin) {
+
+			if (responseLogin.data.Id>0) {
+                            console.log(sessionStorage.APP);
+
+
+                            if (responseLogin.data.FlagListaNegra != 0) {//Esta en lista negra
+
+                                swal("¡Hola!", "Ud. por el momento no puede reservar un espacio, por favor comuníquese con el médico ocupacional", "error");
+                                setTimeout(function () {
+                                    window.location.href = sessionStorage.APP;
+                                }, 5000);
+                                //return;
+                            }
+                            else {
+                                if (responseLogin.data.FlagGrupoCero != 0) {//Esta en grupo 0
+                                    console.log(responseLogin);
+                                    console.log(responseLogin.data);
+                                    /*swal("¡Hola!", "Tu formas parte del grupo 0, no es necesario que separes tu espacio de trabajo.Te esperamos", "success");*/
+                                    swal("¡Hola!", "Tu formas parte del grupo 0, Solo puede reservar sala de reuniones.", "success");
+                                    
+                                    //    window.location.href = sessionStorage.APP;
+                                    //}, 5000);
+                                    sessionStorage.setItem("NOMBRES", responseLogin.data.Nombre);
+                                    sessionStorage.setItem("CORREO", responseLogin.data.Correo);
+                                    sessionStorage.setItem("USERID", responseLogin.data.Id);
+                                    sessionStorage.setItem("PISO", responseLogin.data.Piso);
+                                    sessionStorage.setItem("SITIO", responseLogin.data.NroSitio);
+                                    sessionStorage.setItem("FLAGGRUPO0", responseLogin.data.FlagGrupoCero);
+                                    setTimeout(function () {
+                                    
+                                        window.location.href = sessionStorage.APP + "/Principal";
+
+                                    }, 5000);
+
+                                    /*window.location.href = sessionStorage.APP;*/
+                                }
+                                else {
+                                    sessionStorage.setItem("NOMBRES", responseLogin.data.Nombre);
+                                    sessionStorage.setItem("CORREO", responseLogin.data.Correo);
+                                    sessionStorage.setItem("USERID", responseLogin.data.Id);
+                                    sessionStorage.setItem("PISO", responseLogin.data.Piso);
+                                    sessionStorage.setItem("SITIO", responseLogin.data.NroSitio);
+                                    sessionStorage.setItem("FLAGGRUPO0", responseLogin.data.FlagGrupoCero);
+                                    window.location.href = sessionStorage.APP + "/Principal";
+                                }
+                            }
+
+
+                        } else {
+                            swal("¡Hola!", "Valide el documento Ingresado", "error");
+                            setTimeout(function () {
+                                window.location.href = sessionStorage.APP;
+                            }, 5000);
+                        }
+
+
+                    },
+                    failure: function (msg) {
+                        console.log(msg);
+                        //  $.unblockUI();
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                        //  $.unblockUI();
+                    },
+                    complete: function () {
+                        //$.unblockUI();
+                        //$("#prueba").dialog("close")
+                    }
+                });
+            }
+
+
+
+
+        });
+    });
+    </script>
+</body>
+</html>
